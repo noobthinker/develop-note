@@ -44,6 +44,8 @@
 
 ### add ssh key
 
+>[git@localhost] cd ~
+
 >[git@localhost] sh-keygen -t rsa -b 4096  
 
 ### enter enter enter
@@ -64,6 +66,8 @@
 
 >[git@localhost] cd gitosis-admin
 
+
+###install ok
 
 
 
