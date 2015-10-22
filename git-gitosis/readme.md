@@ -1,29 +1,79 @@
+# centos 7 install git & gitosis
+
+### install git
+
+>[root@localhost] yum install git
+
+
 ### add git user
 
->[root@localhost]useradd -m git
+>[root@localhost] useradd -m git
 
 ### change git passwd
 
->[root@localhost]passwd git
+>[root@localhost] passwd git
 
 ### add git user to sudo 
 
->[root@localhost]visudo
+>[root@localhost] visudo
 
-#### to the end line insert
+#### insert to last line
 >git    ALL=(ALL)       ALL
 
 ### sudo git
 
->sudo git
+>[root@localhost] su git
 
 ### add git repositories folder
 
->[git@localhost]cd ~
+>[git@localhost] cd ~
 
->[git@localhost]mkdir /home/git/repositories
+>[git@localhost] mkdir repositories
 
->[git@localhost] chmod 755 /home/git/repositories
+>[git@localhost] sudo chmod 755 repositories
+
+>[git@localhost] git config --global user.name "myname" 
+
+>[git@localhost] git config --global user.email "myname@server"
+
+>[git@localhost] git clone https://github.com/res0nat0r/gitosis.git
+
+>[git@localhost] cd gitosis 
+
+>[git@localhost] sudo python setup.py install
+
+### add ssh key
+
+>[git@localhost] sh-keygen -t rsa -b 4096  
+
+### enter enter enter
+
+>[git@localhost] cd ~
+
+>[git@localhost] cd .ssh
+
+>[git@localhost] sudo -H -u git gitosis-init < id_rsa.pub
+
+>[git@localhost] sudo chmod 755 /home/git/repositories/gitosis-admin.git/hooks/post-update
+
+### manager gitosis
+
+>[git@localhost] cd ~ 
+
+>[git@localhost] git clone git@localhost:gitosis-admin.git
+
+>[git@localhost] cd gitosis-admin
+
+
+
+
+
+
+
+
+
+
+
 
 
 
