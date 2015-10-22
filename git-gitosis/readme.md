@@ -1,19 +1,19 @@
 ### add git user
 
-useradd -m git
+>useradd -m git
 
 ### change git passwd
 
-passwd git
+>passwd git
 
 ### sudo git
 
-sudo git
+>sudo git
 
 ### add git repositories folder
 
-cd ~
+>cd ~
 
-mkdir /home/git/repositories
+>mkdir /home/git/repositories
 
 
