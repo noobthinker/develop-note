@@ -20,7 +20,7 @@
 #### insert to last line
 >git    ALL=(ALL)       ALL
 
-### sudo git
+### su git
 
 >[root@localhost] su git
 
