@@ -98,7 +98,9 @@
 #### insert to last line
  
 > [group dev]
+
   members = fun@git
+  
   writable = code
   
   
