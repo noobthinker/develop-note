@@ -1,14 +1,14 @@
 ### add git user
 
->useradd -m git
+>[root@localhost]useradd -m git
 
 ### change git passwd
 
->passwd git
+>[root@localhost]passwd git
 
 ### add git user to sudo 
 
->visudo
+>[root@localhost]visudo
 
 #### to the end line insert
 >git    ALL=(ALL)       ALL
@@ -19,9 +19,11 @@
 
 ### add git repositories folder
 
->cd ~
+>[git@localhost]cd ~
 
->mkdir /home/git/repositories
+>[git@localhost]mkdir /home/git/repositories
+
+>[git@localhost] chmod 755 /home/git/repositories
 
 
 
