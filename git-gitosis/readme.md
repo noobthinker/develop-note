@@ -6,6 +6,13 @@
 
 >passwd git
 
+### add git user to sudo 
+
+>visudo
+
+#### to the end line insert
+>git    ALL=(ALL)       ALL
+
 ### sudo git
 
 >sudo git
@@ -15,5 +22,7 @@
 >cd ~
 
 >mkdir /home/git/repositories
+
+
 
 
