@@ -69,6 +69,71 @@
 
 ###install ok
 
+## add gitosis user
+
+### add visitor ssh key.
+
+>[windows-git-bash] sh-keygen -t rsa -b 4096
+
+### enter enter enter
+
+### find the id_rsa.pub
+
+>[windows-git-bash] cd ~/.ssh
+
+
+### copy the id_rsa.pub to the server /home/git/id_rsa.pub
+
+>[git@localhost] cd ~
+
+
+>[git@localhost]  mv id_rsa.pub gitosis-admin/keydir/fun@git.pub
+
+### gives the user access to the git directory permissions
+
+>[git@localhost] cd gitosis-admin
+
+>[git@localhost] vi giosis.conf
+
+#### insert to last line
+ 
+> [group dev]
+  members = fun@git
+  writable = code
+  
+  
+#### save 
+
+>[git@localhost] git add .
+
+>[git@localhost] git commit -a -m "give fun access to the code directory permissions"
+
+>[git@localhost] git push origin master
+
+### user permission ok.
+
+### and git code folder
+
+>[git@localhost] cd ~/repositories
+
+>[git@localhost] mkdir code.git
+
+>[git@localhost] cd code.git
+
+>[git@localhost] git init --bare
+
+### folder ok.
+
+
+### now you can try
+
+>[windows-git-bash] git clone git@Ip:code
+
+### see what happend
+
+
+
+
 
 
 
