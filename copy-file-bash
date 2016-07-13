@@ -1,0 +1,33 @@
+#!/bin/bash
+echo "usage: 1,tube->git | 2,tn-git | 3, git->tube | 4 git->tn " 
+run="a"
+while ( [ "$run" != "q" ] && [ "$run" != "exit" ] )
+do
+read run
+if [ $run = 1 ];then
+   echo "tube->git"
+   sleep 5
+   cp -fr ~/dev/idea/tube-web/src/ ~/git/tube-web/src/
+   cp -fr ~/dve/idea/tube-web/web/ ~/git/tube-web/web/
+fi
+
+if [ $run = 3 ];then
+   echo "git->tube"
+   sleep 5
+   cp -fr ~/git/tube-web/src/ ~/dev/idea/tube-web/src/
+   cp -fr ~/git/tube-web/web/ ~/dev/idea/tube-web/web/
+fi
+
+if [ $run = 2 ];then
+   sleep 5
+   echo "tn->git"
+   cp -fr ~/dev/idea/tn-server/src/ ~/git/tube-web/src/
+fi
+
+if [ $run = 4 ];then
+   echo "git->tn"
+   sleep 5
+   cp -fr ~/git/tn-server/src/ ~/dev/idea/tn-server/src/
+fi
+echo "done"
+done
